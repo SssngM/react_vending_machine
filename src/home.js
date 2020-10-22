@@ -15,18 +15,18 @@ function Home() {
         <div className= "subimg">
            {/* <h3 className ="name"> Chips Soda Candy </h3>  */}
 
-            <NavLink exact to="/chips">
+            <NavLink exact to="/product/chips">
               <img  src="https://media2.giphy.com/media/l3q2PWti4zRPYPTDG/giphy.gif?cid=ecf05e47qtf5wkn2knfmbvfdxq84yrx90rvniz78mt4hdspj&rid=giphy.gif" alt="" 
               />   </NavLink>
   
         
-            <NavLink exact to="/soda"> 
+            <NavLink exact to="/product/drinks"> 
               <img  src="https://media1.giphy.com/media/acJgACIGXAhLa/giphy.gif"  alt="" /> 
             </NavLink>
 
              
 
-            <NavLink exact to="/candy">  
+            <NavLink exact to="/product/candy">  
               <img  src="https://media1.giphy.com/media/EZFuMdWb0hEWY/giphy.gif"  alt=""/>
             </NavLink>
             <h1> </h1>

@@ -40,11 +40,14 @@
 
 }
 
-.chipsimg {
+.imges img {
   height: 400px;
   width: 25%;
   float: left;
-
+  /* clear: left; */
+  /* display:  inline-block; */
+  flex-wrap: wrap;
+  justify-content: center; 
 }
 .chips h1 {
   text-align: center;
@@ -100,7 +103,7 @@
   padding: 80px;
 }
 
-.laysitems button {
+.style button {
   letter-spacing: 1px;
   font-weight: bold;
   background-color: tomato;
@@ -108,7 +111,7 @@
   color: white;
   cursor: pointer;
   text-align: center;
-  font-size: 20px;
-  padding: 7px 78px;
+  font-size: 15px;
+  padding: 7px 15px;
 
 }

@@ -2,29 +2,27 @@ import React from 'react';
 import { NavLink } from "react-router-dom"; 
 import './NavBar.css'
 
-function NavBar(){
-    return (
-        <nav className="NavBar">
-            <NavLink exact to="/">
-            Home
-            </NavLink>
-            <NavLink exact to="/chips">
-            Chips
-            </NavLink>
-            <NavLink exact to="/drinks">
-            Drinks
-            </NavLink>
-            <NavLink exact to="/candy">
-            Candy
-            </NavLink>
-            <NavLink exact to="/cart">
-            <i class="fas fa-shopping-cart">
-             </i>
-             {/* <p>[{cartItems.length}]</p> */}
-            </NavLink>
-          
-        </nav>
-    )
+function NavBar({ quantity }){
+  return (
+    <nav className="NavBar">
+      <NavLink exact to="/">
+        Home
+      </NavLink>
+      <NavLink exact to="/product/chips">
+        Chips
+      </NavLink>
+      <NavLink exact to="/product/drinks">
+        Drinks
+      </NavLink>
+      <NavLink exact to="/product/candy">
+        Candy
+      </NavLink>
+      <NavLink exact to="/cart">
+        <span>{quantity}</span>
+        <i className="fas fa-shopping-cart"></i>
+      </NavLink>
+    </nav>
+  )
 }
 
 export default NavBar; 

@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
-import Shop from './Shop';
 
 import Home from './home'; 
-import Chips from './Chips'; 
-import Drinks from './Drinks'; 
-import Candy from './Candy'; 
-import NavBar from './NavBar'; 
-import Lays from './Lays';
+import NavBar from './NavBar';
+import Product from './Product'; 
 import Cart from './Cart';
 
 import lays from "./img/lays.jpeg"; 
@@ -26,26 +22,21 @@ import kitkat from "./img/kitkat.jpeg";
 import { BrowserRouter, Route } from "react-router-dom"; 
 
 function App(props) {
-const [cart, setCart] = useState({chips: 0});
+  const [cart, setCart] = useState([]);
 
+  console.log('cart...', cart)
   return (
     <div>
       <BrowserRouter>
-        <NavBar />
-        <Route exact path="/chips">
-          <Chips chips={props.chips} setCart={setCart} />
-        </Route>
-        <Route exact path="/chips/lays">
-           <Lays/>
-        </Route>
-        <Route exact path="/drinks">
-          <Drinks drinks={props.drinks} />
-        </Route>
-        <Route exact path="/candy">
-          <Candy candy={props.candy} />
+        <NavBar quantity={cart.length} />
+        <Route exact path="/product/:type">
+          <Product 
+            cart={cart}
+            setCart={setCart}
+            dataObj={props} />
         </Route>
         <Route exact path="/cart">
-          <Cart cart={cart} />
+          <Cart cartItems={cart} />
         </Route>  
         <Route exact path="/">
           <Home />
@@ -54,6 +45,7 @@ const [cart, setCart] = useState({chips: 0});
     </div>
   )
 }
+
 
 App.defaultProps = {
   chips : [
